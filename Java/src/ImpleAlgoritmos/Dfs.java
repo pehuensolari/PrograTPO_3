@@ -1,33 +1,35 @@
 package ImpleAlgoritmos;
 
 
-import clases.Arista;
 import clases.GrafoNoDirigido;
 import java.util.*;
 
 public class Dfs {
+    /*
+    Depth-first search: Dado un nodo inicial, se recorre de manera recursiva
+    para obtener sus adyacentes y de esa manera devolver el total de nodos alcanzables
+    (búsqueda en profundidad)
+     */
 
     //Uso un conjunto para almacenar los nodos encontrados
-    Set<Integer> arbol = new HashSet<>();
+    Set<Integer> conjuntoResultado = new HashSet<>();
     public void iniciar(GrafoNoDirigido<Integer> grafo, Integer nodoInicial) {
 
-        Queue<Integer> cola = new LinkedList<>();
-        Map<Integer, String> estadoVertices = new HashMap<>();
-        arbol.add(nodoInicial);
-        Integer verticePadre = nodoInicial;
-        estadoVertices.put(verticePadre, "GRIS");
-        List<Integer> adyacentes = grafo.obtenerAdyacentes(verticePadre);
+        Map<Integer,String> estadoVertices = new HashMap<>();
+        conjuntoResultado.add(nodoInicial);
+        estadoVertices.put(nodoInicial, "GRIS");
+        List<Integer> adyacentes = grafo.obtenerAdyacentes(nodoInicial);
         for (Integer adyacente : adyacentes) {
             if (estadoVertices.get(adyacente) == null || "BLANCO".equals(estadoVertices.get(adyacente))) {
-                arbol.add(adyacente);
+                conjuntoResultado.add(adyacente);
                 this.iniciar(grafo,adyacente);
             }
         }
-        estadoVertices.put(verticePadre, "NEGRO");
+        estadoVertices.put(nodoInicial, "NEGRO");//Nodo ya recorrido junto con sus adyacentes
     }
 
     public void imprimirGrafoDfs() {
-        Iterator itr = arbol.iterator();
+        Iterator itr = conjuntoResultado.iterator();
         while (itr.hasNext()) {
             System.out.print("Nodo: ");
             System.out.print(itr.next());
