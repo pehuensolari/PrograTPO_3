@@ -13,13 +13,15 @@ public class Principal {
         List<Arco> arcos = new ArrayList<>();
         arcos.add(new Arco(1,2,0));
         arcos.add(new Arco(2,3,0));
-        arcos.add(new Arco(3,4,0));
+        arcos.add(new Arco(3,5,0));
+        arcos.add(new Arco(1,4,0));
         //Vertices del grafo
         List<Integer> vertices = new ArrayList<>();
         vertices.add(1);
         vertices.add(2);
         vertices.add(3);
         vertices.add(4);
+        vertices.add(5);
         //Armo el grafo
         GrafoNoDirigido grafoBfs = new GrafoNoDirigido(arcos,vertices);
 
@@ -28,8 +30,9 @@ public class Principal {
         List<Arco> arcosDfs = new ArrayList<>();
         arcosDfs.add(new Arco(1,2,0));
         arcosDfs.add(new Arco(2,3,0));
-        arcosDfs.add(new Arco(2,4,0));
-        arcosDfs.add(new Arco(4,5,0));
+        arcosDfs.add(new Arco(3,4,0));
+        arcosDfs.add(new Arco(1,5,0));
+        arcosDfs.add(new Arco(5,6,0));
         //Vertices del grafo
         List<Integer> verticesDfs = new ArrayList<>();
         verticesDfs.add(1);
@@ -37,6 +40,7 @@ public class Principal {
         verticesDfs.add(3);
         verticesDfs.add(4);
         verticesDfs.add(5);
+        verticesDfs.add(6);
         //Armo el grafo
         GrafoNoDirigido grafoDfs = new GrafoNoDirigido(arcosDfs,verticesDfs);
 
