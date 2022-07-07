@@ -25,7 +25,6 @@ public class Bfs {
                     cola.offer(adyacente);
                 }
             }
-
             cola.poll();
             estadoVertices.put(verticePadre, "NEGRO");
         }
