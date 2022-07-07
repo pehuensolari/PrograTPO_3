@@ -54,7 +54,8 @@ public class Principal {
         //**Depth-first search**//
         Dfs algoritmoDFS = new Dfs();
         int nodoInicialDfs = 1;
-        System.out.println("");
+        System.out.println(" ");
+        System.out.println(" ");
         System.out.println("***Algoritmo DFS***");
         System.out.println("Nodo inicial --> " + nodoInicialDfs);
         System.out.print("Nodos del grafo:" );

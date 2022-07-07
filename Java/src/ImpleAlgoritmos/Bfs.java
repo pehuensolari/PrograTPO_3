@@ -10,11 +10,9 @@ public class Bfs {
 
         Queue<Integer> cola = new LinkedList<>();
         cola.offer(nodoInicial);
-
         Map<Integer, String> estadoVertices = new HashMap<>();
         List<Arista> arbol = new ArrayList<>();
         arbol.add(new Arista(null, nodoInicial));
-
         while (!cola.isEmpty()) {
             Integer verticePadre = cola.peek();
             List<Integer> adyacentes = grafo.obtenerAdyacentes(verticePadre);
